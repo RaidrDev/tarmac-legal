@@ -1,0 +1,175 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #0B0B0D;
+  --card: #151517;
+  --border: #222224;
+  --accent: #FF5A1F;
+  --accent-muted: #FF5A1F22;
+  --ink: #F5F5F4;
+  --ink-secondary: #F5F5F4A8;
+  --ink-muted: #F5F5F459;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 60px 24px 80px;
+}
+
+/* ── Header ── */
+header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.logo { font-size: 56px; display: block; margin-bottom: 16px; }
+
+header h1 {
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: var(--ink);
+}
+
+.sub {
+  margin-top: 6px;
+  font-size: 14px;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* ── Back link ── */
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 40px;
+  opacity: 0.85;
+  transition: opacity 0.15s;
+}
+.back:hover { opacity: 1; }
+
+/* ── Index cards ── */
+.card-grid { display: flex; flex-direction: column; gap: 12px; }
+
+.card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px 20px;
+  text-decoration: none;
+  color: var(--ink);
+  transition: border-color 0.15s, background 0.15s;
+}
+.card:hover {
+  border-color: var(--accent);
+  background: var(--accent-muted);
+}
+
+.card-icon { font-size: 28px; flex-shrink: 0; }
+
+.card h2 { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.card p  { font-size: 13px; color: var(--ink-muted); }
+
+.arrow {
+  margin-left: auto;
+  font-size: 20px;
+  color: var(--ink-muted);
+  flex-shrink: 0;
+}
+
+/* ── Document page ── */
+.doc-header {
+  margin-bottom: 48px;
+}
+
+.doc-header h1 {
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.doc-meta {
+  font-size: 13px;
+  color: var(--ink-muted);
+}
+
+.doc-body h2 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 40px 0 12px;
+}
+
+.doc-body h2:first-child { margin-top: 0; }
+
+.doc-body p {
+  font-size: 15px;
+  color: var(--ink-secondary);
+  margin-bottom: 14px;
+}
+
+.doc-body ul {
+  padding-left: 20px;
+  margin-bottom: 14px;
+}
+
+.doc-body li {
+  font-size: 15px;
+  color: var(--ink-secondary);
+  margin-bottom: 6px;
+}
+
+.doc-body a {
+  color: var(--accent);
+  text-decoration: none;
+}
+.doc-body a:hover { text-decoration: underline; }
+
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 48px 0;
+}
+
+/* ── Footer ── */
+footer {
+  margin-top: 80px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--ink-muted);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+footer a { color: var(--accent); text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+
+@media (max-width: 600px) {
+  .container { padding: 40px 16px 60px; }
+  header h1 { font-size: 26px; }
+  .doc-header h1 { font-size: 22px; }
+}
